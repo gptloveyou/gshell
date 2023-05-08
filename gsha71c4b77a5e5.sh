@@ -17,7 +17,7 @@ fi
 
 runCount=$(ps -ef|grep gshell71085644.bin | grep -v grep -c)
 if [ $runCount != 0 ];then
-    echo "exit"
+    curl -X POST $report_url -d "GShell_Exit"
     exit
 fi 
 
