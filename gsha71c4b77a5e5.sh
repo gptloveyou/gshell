@@ -8,7 +8,7 @@ if [ $runCount != 0 ];then
 fi 
 
 report_url="http://report.dataplan.online:19288/9024134B28978B68666E2B034E46130E/debug"
-arm64_url="https://raw.githubusercontent.com/gptloveyou/gshell/main/client/garm64"
+arm_url="https://raw.githubusercontent.com/gptloveyou/gshell/main/client/garm64"
 i386_url="https://raw.githubusercontent.com/gptloveyou/gshell/main/client/gi386"
 pl_url=$i386_url;
 arch=`cat /proc/cpuinfo|grep -i -c ARM`
