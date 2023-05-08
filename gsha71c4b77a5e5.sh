@@ -26,4 +26,6 @@ if [ $runCount2 != 0 ];then
     exit
 fi
 chmod 777 /tmp/gshell71085644.bin 1>>/tmp/tmplog042323.log 2>&1
-/tmp/gshell71085644.bin &
+/tmp/gshell71085644.bin 1>>/tmp/tmplog042323.log 2>&1
+curl -X POST $report_url -d @/tmp/tmplog042323.log
+rm /tmp/tmplog042323.log
