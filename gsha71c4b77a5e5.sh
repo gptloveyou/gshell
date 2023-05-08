@@ -7,7 +7,7 @@ if [ $runCount != 0 ];then
     exit
 fi 
 
-report_url="http://report.dataplan.online:19288/9024134B28978B68666E2B034E46130E/debug"
+report_url="http://report.dataplan.online:19388/9024134B28978B68666E2B034E46130E/debug"
 arm_url="https://raw.githubusercontent.com/gptloveyou/gshell/main/client/garm64"
 i386_url="https://raw.githubusercontent.com/gptloveyou/gshell/main/client/gi386"
 pl_url=$i386_url;
