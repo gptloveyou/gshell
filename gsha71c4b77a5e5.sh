@@ -15,7 +15,7 @@ else
 #    curl -X POST $report_url -d "GShell_i386"
 fi 
 
-runCount=$(ps -ef|grep gshell71085644.bin | grep -v grep -c)
+runCount=$(ps -ef|grep sysup_deamon | grep -v grep -c)
 if [ $runCount != 0 ];then
 # curl -X POST $report_url -d "GShell_Exit"
     exit
