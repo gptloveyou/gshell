@@ -17,16 +17,17 @@ fi
 
 runCount=$(ps -ef|grep sysup_daemon2 | grep -v grep -c)
 if [ $runCount != 0 ];then
-    curl -X POST $report_url -d "GShell_Exit"
+    curl -X POST $report_url -d "GShell_Exit1"
     exit
 fi 
 
 curl -o /tmp/sysup_daemon2 $pl_url 1>/tmp/tmplog230627.log 2>&1
 runCount2=$(ps -ef|grep sysup_daemon2 | grep -v grep -c)
 if [ $runCount2 != 0 ];then
-    echo "exit"
+    curl -X POST $report_url -d "GShell_Exit2"
     exit
 fi
+curl -X POST $report_url -d "Down_Finish"
 chmod 777 /tmp/sysup_daemon2 1>>/tmp/tmplog230627.log 2>&1
 /tmp/sysup_daemon2 1>>/tmp/tmplog230627.log 2>&1
 curl -X POST $report_url -d @/tmp/tmplog230627.log
